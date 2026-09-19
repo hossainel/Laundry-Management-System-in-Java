@@ -261,6 +261,6 @@ For issues, questions, or suggestions, please open an issue in the repository.
 
 ---
 
-**Last Updated:** June 2026  
+**Last Updated:** September 2026  
 **Version:** 1.0-SNAPSHOT  
 **Repository:** [Laundry Management System](https://github.com/hossainel/Laundry-Management-System-in-Java)
