@@ -1,0 +1,70 @@
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #f4f6f9;
+}
+
+/* TOP BAR */
+.topbar {
+    -fx-background-color: white;
+    -fx-padding: 15;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1 0;
+}
+
+.topbar-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+/* CONTENT AREA */
+.content-area {
+    -fx-padding: 20;
+    -fx-background-color: #f4f6f9;
+}
+
+/* BOTTOM BAR (STATUS / ALERT AREA) */
+.bottombar {
+    -fx-background-color: #111827;
+    -fx-padding: 8 15;
+}
+
+.bottombar-label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+/* BUTTONS */
+.button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 10 18;
+}
+
+.button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.button-danger {
+    -fx-background-color: #dc2626;
+}
+
+.button-success {
+    -fx-background-color: #16a34a;
+}
+
+.button-cancel {
+    -fx-background-color: #1d4ed8;
+}
+
+/* MESSAGES */
+.error-label {
+    -fx-text-fill: #dc2626;
+    -fx-font-weight: bold;
+}
+
+.success-label {
+    -fx-text-fill: #16a34a;
+    -fx-font-weight: bold;
+}

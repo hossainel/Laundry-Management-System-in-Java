@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="710.0" prefWidth="950.0" spacing="20" styleClass="main-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lms.laundry.controller.CustomerLedgerController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+        <Label styleClass="topbar-title" text="Customer Ledger" />
+        <ComboBox fx:id="cmbCustomer" prefWidth="280" promptText="Select customer" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#refreshLedger" styleClass="btn-refresh" text="Refresh" />
+    </HBox>
+    <Label fx:id="lblCustomerName" styleClass="header-label" text="Customer" />
+    <GridPane hgap="16" vgap="16">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33" />
+        </columnConstraints>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Orders" />
+            <Label fx:id="lblTotalOrders" styleClass="mini-value" text="0.00" />
+        </VBox>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Payments" />
+            <Label fx:id="lblTotalPayments" styleClass="mini-value" text="0.00" />
+        </VBox>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Due / Advance" />
+            <Label fx:id="lblTotalBalance" styleClass="mini-value" text="0.00" />
+        </VBox>
+    </GridPane>
+    <TableView fx:id="tblLedger" styleClass="directory-table" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colDate" prefWidth="120" text="Date" />
+            <TableColumn fx:id="colType" prefWidth="110" text="Type" />
+            <TableColumn fx:id="colReference" prefWidth="260" text="Reference" />
+            <TableColumn fx:id="colDebit" prefWidth="130" text="Debit" />
+            <TableColumn fx:id="colCredit" prefWidth="130" text="Credit" />
+            <TableColumn fx:id="colBalance" prefWidth="140" text="Balance" />
+        </columns>
+        <placeholder>
+            <Label styleClass="empty-table-placeholder" text="No ledger entries for this customer." />
+        </placeholder>
+    </TableView>
+    <HBox alignment="CENTER_RIGHT">
+        <Label fx:id="lblStatus" styleClass="status-label" text="Showing 0 ledger entries" />
+    </HBox>
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/lists.css" />
+        <URL value="@../css/forms.css" />
+        <URL value="@../css/dashboard.css" />
+    </stylesheets>
+</VBox>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="710.0" prefWidth="1050.0" styleClass="main-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lms.laundry.controller.POSController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+            <Label styleClass="topbar-title" text="POS" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblStatus" styleClass="status-label" text="Ready" />
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="14" BorderPane.alignment="CENTER">
+            <GridPane hgap="12" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="24" />
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="18" />
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="32" />
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="12" />
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="14" />
+                </columnConstraints>
+                <Label text="Customer" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label text="Type" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Item" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Label text="Qty" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <ComboBox fx:id="cmbCustomer" editable="true" maxWidth="Infinity" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cmbItemType" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cmbItem" editable="true" maxWidth="Infinity" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Spinner fx:id="spnQuantity" editable="true" maxWidth="Infinity" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Button onAction="#addToCart" styleClass="btn-add" text="Add Item" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+            <TableView fx:id="tblCart" styleClass="directory-table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colType" prefWidth="80" text="Type" />
+                    <TableColumn fx:id="colName" prefWidth="260" text="Item" />
+                    <TableColumn fx:id="colPrice" prefWidth="100" text="Unit Price" />
+                    <TableColumn fx:id="colQty" prefWidth="60" text="Qty" />
+                    <TableColumn fx:id="colTotal" prefWidth="130" text="Total" />
+                    <TableColumn fx:id="colAction" prefWidth="120" sortable="false" text="Action" />
+                </columns>
+                <placeholder>
+                    <Label styleClass="empty-table-placeholder" text="No cart items added." />
+                </placeholder>
+            </TableView>
+        </VBox>
+    </center>
+    <right>
+        <VBox prefWidth="280" spacing="14" styleClass="form-container" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="18" left="18" right="18" top="18" />
+            </padding>
+            <Label styleClass="header-label" text="Checkout" />
+            <HBox VBox.vgrow="ALWAYS">
+                <Label maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Delivery Date" />
+                <DatePicker fx:id="dpDeliveryDate" maxWidth="Infinity" />
+            </HBox>
+            <HBox VBox.vgrow="ALWAYS">
+                <Label maxWidth="100.0" prefWidth="100.0" text="Discount" />
+                <TextField fx:id="txtDiscount" promptText="0.00" />
+            </HBox>
+            <HBox VBox.vgrow="ALWAYS">
+                <Label maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Paid Amount" />
+                <TextField fx:id="txtPaid" promptText="0.00" />
+            </HBox>
+            <HBox VBox.vgrow="ALWAYS">
+                <Label maxWidth="100" minWidth="100" prefWidth="100" text="Payment Method" />
+                <ComboBox fx:id="cmbPaymentMethod" maxWidth="Infinity" />
+            </HBox>
+            <CheckBox fx:id="chkAdjustAdvance" text="Adjust previous advance" />
+            <Separator />
+            <GridPane hgap="8" vgap="10">
+                <Label text="Subtotal" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="lblSubtotal" alignment="CENTER_RIGHT" maxWidth="Infinity" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Total" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="lblTotal" alignment="CENTER_RIGHT" maxWidth="Infinity" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Current Due" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="lblDue" alignment="CENTER_RIGHT" maxWidth="Infinity" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Previous Balance" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label fx:id="lblPreviousBalance" alignment="CENTER_RIGHT" maxWidth="Infinity" text="Settled 0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="This Order" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label fx:id="lblCurrentDue" alignment="CENTER_RIGHT" maxWidth="Infinity" text="Settled 0.00" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="After Save" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <Label fx:id="lblAfterBalance" alignment="CENTER_RIGHT" maxWidth="Infinity" text="Settled 0.00" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button maxWidth="Infinity" onAction="#saveOrder" styleClass="btn-save" text="Save Order" />
+            <Button maxWidth="Infinity" onAction="#clearSale" styleClass="btn-cancel" text="Clear" />
+        </VBox>
+    </right>
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/lists.css" />
+        <URL value="@../css/forms.css" />
+    </stylesheets>
+</BorderPane>

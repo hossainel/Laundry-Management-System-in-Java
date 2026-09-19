@@ -1,0 +1,103 @@
+.content-area {
+    -fx-background-color: #f0f2f5;
+}
+
+.topbar-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1a1a;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #e2e8f0;
+}
+
+.card-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #65676b;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+}
+
+.card-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Color Accents */
+.card-sales .card-value { -fx-text-fill: #27ae60; }
+.card-due .card-value { -fx-text-fill: #e74c3c; }
+.card-orders .card-value { -fx-text-fill: #3498db; }
+.card-customers { -fx-text-fill: #951478; }
+
+.mini-card {
+    -fx-background-color: #ffffff;
+    -fx-padding: 14;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #e2e8f0;
+}
+
+.mini-title {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+    -fx-font-weight: bold;
+}
+
+.mini-value {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.calendar-grid {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10;
+}
+
+.calendar-header {
+    -fx-background-color: #f1f5f9;
+    -fx-text-fill: #475569;
+    -fx-font-weight: bold;
+    -fx-padding: 8;
+    -fx-background-radius: 6;
+}
+
+.calendar-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.calendar-day {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+.calendar-order {
+    -fx-font-size: 11px;
+    -fx-text-fill: #0f172a;
+    -fx-background-color: #e0f2fe;
+    -fx-background-radius: 5;
+    -fx-padding: 3 5;
+}
+
+.activity-list {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+}
+
+.activity-list .list-cell {
+    -fx-padding: 8;
+    -fx-background-color: transparent;
+    -fx-text-fill: #333;
+    -fx-border-color: #eee;
+    -fx-border-width: 0 0 1 0;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox prefHeight="710.0" prefWidth="950.0" spacing="20" styleClass="main-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lms.laundry.controller.ReportController">
+    <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+    <Label fx:id="lblReportType" managed="false" visible="false" text="orders" />
+    <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+        <Label fx:id="lblReportTitle" styleClass="topbar-title" text="Order Reports" />
+        <Region HBox.hgrow="ALWAYS" />
+        <DatePicker fx:id="dpFrom" /><DatePicker fx:id="dpTo" />
+        <Button onAction="#refreshReport" styleClass="btn-refresh" text="Refresh" />
+    </HBox>
+    <TableView fx:id="tblReport" styleClass="directory-table" VBox.vgrow="ALWAYS">
+        <columns><TableColumn fx:id="colLabel" prefWidth="360" text="Status" /><TableColumn fx:id="colCount" prefWidth="160" text="Orders" /><TableColumn fx:id="colAmount" prefWidth="200" text="Amount" /></columns>
+    </TableView>
+    <HBox alignment="CENTER_RIGHT"><Label fx:id="lblStatus" styleClass="status-label" text="Showing 0 rows" /></HBox>
+    <stylesheets><URL value="@../css/style.css" /><URL value="@../css/lists.css" /></stylesheets>
+</VBox>

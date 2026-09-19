@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="710.0" prefWidth="980.0" spacing="18" styleClass="form-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lms.laundry.controller.OrderController">
+    <padding>
+        <Insets bottom="24" left="24" right="24" top="24" />
+    </padding>
+    <VBox spacing="6">
+        <Label fx:id="lblHeader" styleClass="header-label" text="Edit Order" />
+        <Label styleClass="subheader-label" text="Adjust order details and update service or product line items." />
+    </VBox>
+    <Separator />
+
+    <VBox fx:id="formContainer" spacing="12" styleClass="formsfx-container" />
+
+    <GridPane hgap="12" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="22" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="40" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="14" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="14" />
+        </columnConstraints>
+        <Label text="Type" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="Item" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="Qty" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <ComboBox fx:id="cmbItemType" maxWidth="Infinity" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="cmbItem" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Spinner fx:id="spnQuantity" editable="true" maxWidth="Infinity" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button onAction="#addLineItem" styleClass="btn-add" text="Add Item" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    </GridPane>
+
+    <TableView fx:id="tblItems" styleClass="directory-table" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colItemType" prefWidth="120" text="Type" />
+            <TableColumn fx:id="colItemName" prefWidth="360" text="Item" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="120" text="Unit Price" />
+            <TableColumn fx:id="colQuantity" prefWidth="80" text="Qty" />
+            <TableColumn fx:id="colLineTotal" prefWidth="130" text="Total" />
+            <TableColumn fx:id="colRemove" prefWidth="120" sortable="false" text="Remove" />
+        </columns>
+        <placeholder>
+            <Label styleClass="empty-table-placeholder" text="No order items found." />
+        </placeholder>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT" spacing="20">
+        <Label text="Subtotal" />
+        <Label fx:id="lblSubtotal" minWidth="90" styleClass="status-label" text="0.00" />
+        <Label text="Total" />
+        <Label fx:id="lblTotal" minWidth="90" styleClass="status-label" text="0.00" />
+    </HBox>
+
+    <HBox alignment="CENTER_RIGHT" spacing="12" styleClass="action-bar">
+        <Button fx:id="btnDelete" styleClass="button-danger" text="Delete" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleCancel" styleClass="btn-cancel" text="Cancel" />
+        <Button fx:id="btnSave" onAction="#handleSave" prefHeight="33.0" prefWidth="160.0" styleClass="btn-save" text="Update Order" />
+    </HBox>
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/forms.css" />
+        <URL value="@../css/lists.css" />
+    </stylesheets>
+</VBox>

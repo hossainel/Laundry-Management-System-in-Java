@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefWidth="540.0" prefHeight="500.0" spacing="20.0" styleClass="form-container"
+      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.lms.laundry.controller.SettingsController">
+
+    <padding>
+        <Insets bottom="25" left="25" right="25" top="25" />
+    </padding>
+
+    <!-- Header Section -->
+    <VBox spacing="6">
+        <Label styleClass="header-label" text="System Configuration Directory" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        <Label text="Modify runtime keys and global parameters below." style="-fx-text-fill: gray;" />
+    </VBox>
+
+    <Separator />
+
+    <!-- Scrollable Area for Dynamic Rows -->
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS"
+                style="-fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 0;">
+        <content>
+            <VBox fx:id="settingsRowsContainer" spacing="16" style="-fx-padding: 5 5 5 5;">
+                <!-- Row Items are dynamically injected here via code -->
+            </VBox>
+        </content>
+    </ScrollPane>
+
+    <Separator />
+
+    <!-- Action Bar Controls -->
+    <HBox alignment="CENTER_RIGHT" spacing="12" styleClass="action-bar">
+        <Button onAction="#handleCancel" styleClass="btn-cancel" text="Cancel" />
+        <Button onAction="#handleBulkSave" prefWidth="160" styleClass="btn-save" text="Save Configurations" />
+    </HBox>
+
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/forms.css" />
+    </stylesheets>
+</VBox>

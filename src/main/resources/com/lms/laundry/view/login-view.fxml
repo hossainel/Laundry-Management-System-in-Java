@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../css/login.css"
+            fx:controller="com.lms.laundry.controller.LoginController"
+            xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <!-- Center Container -->
+    <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity"
+              prefHeight="400.0" prefWidth="450.0" spacing="20.0" styleClass="login-container"
+              StackPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <Label styleClass="title-label" text="Laundry Management System" />
+            <Label styleClass="subtitle-label" text="Login to Continue" />
+         <Label fx:id="errorLabel" onMouseClicked="#onErrorLabelClick" styleClass="error-label" />
+            <TextField fx:id="usernameField" prefWidth="300.0" promptText="Enter Username" styleClass="input-field" />
+            <PasswordField fx:id="passwordField" prefWidth="300.0" promptText="Enter Password" styleClass="input-field" />
+            <HBox alignment="CENTER_RIGHT" prefWidth="300.0">
+                <CheckBox fx:id="rememberCheckBox" styleClass="remember-checkbox" text="Remember Me" />
+            </HBox>
+            <Button fx:id="loginButton" onAction="#onLoginButtonClick" prefHeight="45.0" prefWidth="300.0"
+                    styleClass="login-button" text="Login" />
+            <Hyperlink styleClass="forgot-link" text="Forgot Password?" />
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+        </VBox>
+    </StackPane>
+</AnchorPane>

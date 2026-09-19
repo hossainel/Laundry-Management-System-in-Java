@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="710.0" prefWidth="950.0" spacing="20" styleClass="main-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lms.laundry.controller.PaymentListController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+        <Label styleClass="topbar-title" text="Payments" />
+        <Button onAction="#addPayment" styleClass="btn-add" text="Add New" />
+        <Region HBox.hgrow="ALWAYS" />
+        <TextField fx:id="txtSearch" prefWidth="320" promptText="Search customer or method..." styleClass="search-field" />
+        <Button onAction="#refreshTable" styleClass="btn-refresh" text="Refresh" />
+    </HBox>
+    <TableView fx:id="tblPayments" styleClass="directory-table" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="60" text="ID" />
+            <TableColumn fx:id="colCustomer" prefWidth="220" text="Customer" />
+            <TableColumn fx:id="colAmount" prefWidth="130" text="Amount" />
+            <TableColumn fx:id="colMethod" prefWidth="160" text="Method" />
+            <TableColumn fx:id="colDate" prefWidth="150" text="Payment Date" />
+            <TableColumn fx:id="colAction" prefWidth="160" sortable="false" text="Actions" />
+        </columns>
+        <placeholder>
+            <Label styleClass="empty-table-placeholder" text="No payments found." />
+        </placeholder>
+    </TableView>
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Label fx:id="lblStatus" styleClass="status-label" text="Showing 0 Payments" />
+    </HBox>
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/lists.css" />
+    </stylesheets>
+</VBox>

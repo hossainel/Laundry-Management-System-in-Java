@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="710.0" prefWidth="950.0" spacing="20" styleClass="main-container"
+      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.lms.laundry.controller.ServiceListController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+        <Label styleClass="topbar-title" text="Business Service Ledger" />
+        <Button onAction="#addService" styleClass="btn-add" text="Add New Service" />
+        <Region HBox.hgrow="ALWAYS" />
+        <TextField fx:id="txtSearch" prefWidth="320" promptText="Search service name or category..." styleClass="search-field" />
+        <Button onAction="#refreshTable" styleClass="btn-refresh" text="Refresh" />
+    </HBox>
+    <TableView fx:id="tblServices" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS"
+               styleClass="directory-table">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="60" text="ID" />
+            <TableColumn fx:id="colImage" text="Image" />
+            <TableColumn fx:id="colName" prefWidth="240" text="Service Name" />
+            <TableColumn fx:id="colCategory" prefWidth="180" text="Category" />
+            <TableColumn fx:id="colSubTypesCount" prefWidth="130" text="Assigned Types" />
+            <TableColumn fx:id="colStatus" prefWidth="120" text="Status" />
+            <TableColumn fx:id="colAction" prefWidth="160" sortable="false" text="Actions" />
+        </columns>
+        <placeholder>
+            <Label styleClass="empty-table-placeholder" text="No laundry services matched your search terms." />
+        </placeholder>
+    </TableView>
+    <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="footer-bar">
+        <Label fx:id="lblStatus" styleClass="status-label" text="Showing 0 Logged Items" />
+    </HBox>
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/lists.css" />
+    </stylesheets>
+</VBox>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lms.laundry.controller.MainController">
+    <!-- TOP BAR -->
+    <top>
+        <HBox styleClass="topbar">
+            <Label fx:id="topBarTitle" styleClass="topbar-title" />
+        </HBox>
+    </top>
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <!-- New Hierarchical Tree Navigation -->
+            <TreeView fx:id="menuTreeView" styleClass="menu-tree-view" VBox.vgrow="ALWAYS" />
+
+            <Separator style="-fx-background-color: #e5e7eb;" />
+
+            <!-- Logout Action Anchor -->
+            <Button maxWidth="Infinity" onAction="#logout" styleClass="logout-button" text="Logout" />
+        </VBox>
+    </left>
+
+    <!-- CENTER CONTENT -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area" />
+    </center>
+
+    <!-- BOTTOM BAR -->
+    <bottom>
+        <HBox styleClass="bottombar">
+            <Label fx:id="statusLabel" styleClass="bottombar-label" text="Ready" />
+        </HBox>
+    </bottom>
+
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/sidebar.css" />
+    </stylesheets>
+</BorderPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="710.0" prefWidth="950.0" spacing="20" styleClass="main-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lms.laundry.controller.OrderCalenderController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+        <Label styleClass="topbar-title" text="Order Calendar" />
+        <Region HBox.hgrow="ALWAYS" />
+        <DatePicker fx:id="dpMonth" />
+        <Button onAction="#refreshCalendar" styleClass="btn-refresh" text="Refresh" />
+    </HBox>
+    <GridPane hgap="16" vgap="16">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+        </columnConstraints>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Received" />
+            <Label fx:id="lblReceived" styleClass="mini-value" text="0" />
+        </VBox>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Washing" />
+            <Label fx:id="lblWashing" styleClass="mini-value" text="0" />
+        </VBox>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Ready" />
+            <Label fx:id="lblReady" styleClass="mini-value" text="0" />
+        </VBox>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Delivered" />
+            <Label fx:id="lblDelivered" styleClass="mini-value" text="0" />
+        </VBox>
+    </GridPane>
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <GridPane fx:id="calendarGrid" hgap="8" vgap="8" styleClass="calendar-grid">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="14.285" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="14.285" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="14.285" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="14.285" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="14.285" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="14.285" />
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="14.285" />
+            </columnConstraints>
+        </GridPane>
+    </ScrollPane>
+    <HBox alignment="CENTER_RIGHT">
+        <Label fx:id="lblStatus" styleClass="status-label" text="Showing 0 scheduled orders" />
+    </HBox>
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/lists.css" />
+        <URL value="@../css/dashboard.css" />
+    </stylesheets>
+</VBox>

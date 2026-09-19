@@ -1,0 +1,71 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);
+    -fx-font-family: "Segoe UI";
+}
+
+.login-container {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0, 0, 8);
+}
+
+.title-label {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3c72;
+}
+
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6c757d;
+}
+
+.error-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #d00f0f;
+}
+
+.success-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #043504;
+}
+
+.input-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #dcdcdc;
+    -fx-padding: 12;
+    -fx-font-size: 14px;
+}
+
+.input-field:focused {
+    -fx-border-color: #2a5298;
+    -fx-border-width: 2;
+}
+
+.login-button {
+    -fx-background-color: #2a5298;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #1e3c72;
+}
+
+.remember-checkbox {
+    -fx-text-fill: #555555;
+}
+
+.forgot-link {
+    -fx-text-fill: #2a5298;
+    -fx-font-size: 13px;
+}
+
+.forgot-link:hover {
+    -fx-underline: true;
+}

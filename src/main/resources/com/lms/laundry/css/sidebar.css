@@ -1,0 +1,87 @@
+.sidebar {
+    -fx-background-color: #1f2937;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-pref-width: 240;
+}
+
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0 20 5;
+}
+
+.sidebar-user {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 15 5;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e5e7eb;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 15;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #374151;
+}
+
+.sidebar-button-active {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+}
+
+.logout-button {
+    -fx-background-color: #dc2626;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.menu-tree-view {
+    -fx-custom-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+/* Base style for all standard text items */
+.menu-tree-view .tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-font-size: 15px;
+    -fx-padding: 10 14;
+    -fx-cursor: hand;
+}
+
+/* Hover state */
+.menu-tree-view .tree-cell:hover {
+    -fx-background-color: #f3f4f6;
+    -fx-text-fill: #000;
+    -fx-background-radius: 6;
+    -fx-font-size: 17px;
+}
+
+/* Selected state: Changes color, weight, and BUMPS the font size up */
+.menu-tree-view .tree-cell:selected {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-font-size: 16px;
+}
+
+/* Match arrow sizing with scales */
+.menu-tree-view .tree-cell .arrow {
+    -fx-background-color: #9ca3af;
+}
+.menu-tree-view .tree-cell:selected .arrow {
+    -fx-background-color: white;
+}

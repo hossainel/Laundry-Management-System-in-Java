@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="710.0" prefWidth="1050.0" spacing="18" styleClass="content-area" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lms.laundry.controller.DashboardController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="14">
+        <Label styleClass="topbar-title" text="Business Overview" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#openPos" styleClass="btn-add" text="New Order" />
+        <Button onAction="#openOrders" styleClass="btn-refresh" text="Orders" />
+        <Button onAction="#openPayments" styleClass="btn-refresh" text="Payments" />
+    </HBox>
+
+    <GridPane hgap="16" vgap="16">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+        </columnConstraints>
+        <VBox spacing="8" styleClass="card card-orders" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label styleClass="card-title" text="Total Orders" />
+            <Label fx:id="lblTotalOrders" styleClass="card-value" text="0" />
+        </VBox>
+        <VBox spacing="8" styleClass="card card-sales" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label styleClass="card-title" text="Today's Sales" />
+            <Label fx:id="lblTodaySales" styleClass="card-value" text="0.00" />
+        </VBox>
+        <VBox spacing="8" styleClass="card card-due" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label styleClass="card-title" text="Total Due" />
+            <Label fx:id="lblTotalDue" styleClass="card-value" text="0.00" />
+        </VBox>
+        <VBox spacing="8" styleClass="card card-customers" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <Label styleClass="card-title" text="Customers" />
+            <Label fx:id="lblTotalCustomers" styleClass="card-value" text="0" />
+        </VBox>
+    </GridPane>
+
+    <GridPane hgap="16" vgap="16">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+            <ColumnConstraints hgrow="ALWAYS" percentWidth="25" />
+        </columnConstraints>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Received" />
+            <Label fx:id="lblReceivedOrders" styleClass="mini-value" text="0" />
+        </VBox>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Washing" />
+            <Label fx:id="lblWashingOrders" styleClass="mini-value" text="0" />
+        </VBox>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Ready" />
+            <Label fx:id="lblReadyOrders" styleClass="mini-value" text="0" />
+        </VBox>
+        <VBox spacing="6" styleClass="mini-card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <Label styleClass="mini-title" text="Delivered" />
+            <Label fx:id="lblDeliveredOrders" styleClass="mini-value" text="0" />
+        </VBox>
+    </GridPane>
+
+    <VBox spacing="10" styleClass="card" VBox.vgrow="ALWAYS">
+        <Label styleClass="card-title" text="Recent Orders" />
+        <ListView fx:id="listActivity" styleClass="activity-list" VBox.vgrow="ALWAYS" />
+    </VBox>
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/lists.css" />
+        <URL value="@../css/dashboard.css" />
+    </stylesheets>
+</VBox>

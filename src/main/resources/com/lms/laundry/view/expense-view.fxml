@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefWidth="480.0" spacing="25.0" styleClass="form-container"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.lms.laundry.controller.ExpenseController">
+
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30" />
+    </padding>
+
+    <!-- Header Section -->
+    <VBox spacing="6">
+        <Label fx:id="lblHeader" styleClass="header-label" text="Log New Business Expense" />
+        <Label styleClass="subheader-label" text="Please populate the operational attributes below." />
+    </VBox>
+
+    <Separator />
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+                VBox.vgrow="ALWAYS"
+                style="-fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 0;">
+        <VBox fx:id="formContainer" spacing="15" styleClass="formsfx-container" />
+    </ScrollPane>
+    <Separator />
+
+    <!-- Action Bar Controls -->
+    <HBox alignment="CENTER_RIGHT" spacing="12" styleClass="action-bar">
+        <Button fx:id="btnDelete" styleClass="button-danger" text="Delete" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleCancel" styleClass="btn-cancel" text="Cancel" />
+        <Button fx:id="btnSave" onAction="#handleSave" prefHeight="33.0" prefWidth="200.0" styleClass="btn-save" text="Save Expense" />
+    </HBox>
+
+    <stylesheets>
+        <URL value="@../css/style.css" />
+        <URL value="@../css/forms.css" />
+    </stylesheets>
+</VBox>
